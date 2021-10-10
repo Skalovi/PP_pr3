@@ -4,13 +4,13 @@ int main()
 {
     char Message[1000];
 
-    std::cout << "Enter your message(1000 signs maximum):\n";
+    std::cout << "Enter your message (1000 signs maximum, use \"_\" as space bar):\n";
     std::cin >> Message;
     std::cout << "\n";
     
     for (int i = 0; i < strlen(Message); i++) 
     {
-        if ((Message[i] < 65) || (Message[i] > 90 && Message[i] < 97) || (Message[i] > 122))
+        if ((Message[i] < 65) || (Message[i] > 90 && Message[i] < 95) || (Message[i] > 95 && Message[i] < 97) || (Message[i] > 122))
         {
             std::cout << "Unexpected symbols try again(1000 signs maximum):\n";
             std::cin >> Message;
@@ -37,6 +37,9 @@ int main()
 
         else if (Message[i] == 88)
             Message[i] = 62;
+
+        else if (Message[i] == 95)
+            Message[i] = 92;
       
 
         Message[i] += 3;
